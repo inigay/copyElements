@@ -51,11 +51,25 @@ export default {
         commit("removeCopy", cardIndex);
       }
     },
-    init({ commit }) {
-      commit("addCard", createCard("aa", "aa"));
-      commit("addCard", createCard("bb", "bb"));
-      commit("addCard", createCard("cc", "cc"));
-      commit("addCard", createCard("dd", "dd"));
+    init({ commit, state }) {
+      if (state.cards.length === 0) {
+        commit(
+          "addCard",
+          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/bear.jfif")
+        );
+        commit(
+          "addCard",
+          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/deer.jpg")
+        );
+        commit(
+          "addCard",
+          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/bus.jpg")
+        );
+        commit(
+          "addCard",
+          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/slammer.jfif")
+        );
+      }
     }
   },
   modules: {}

@@ -1,7 +1,8 @@
-const createCard = (img, text) => {
+const createCard = (title, description, img) => {
   return {
     img,
-    text
+    title,
+    description
   };
 };
 
