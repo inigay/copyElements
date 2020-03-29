@@ -1,7 +1,7 @@
 <template>
   <div class="right-side">
     <template v-for="(copy, index) in copies">
-      <div :key="index">
+      <div :key="index" v-slide="copy">
         <Card
           :class="{ empty: copy < 1 }"
           :card="cardByIndex(index)"
@@ -16,12 +16,6 @@
               </md-button>
             </div>
           </template>
-        </Card>
-        <Card
-          :class="{ empty: copy < 1, shallow: true }"
-          :card="cardByIndex(index)"
-        >
-          <md-button class="md-button" :disabled="true"> </md-button>
         </Card>
       </div>
     </template>
@@ -57,10 +51,18 @@ export default {
 
   .shallow {
     position: absolute;
-    left: -50%;
-    opacity: 0.5;
+    left: 0;
     top: 0;
     z-index: -1;
+
+    .actions {
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  .slide-bloat {
+    transition: transform 0.1s ease;
   }
 }
 

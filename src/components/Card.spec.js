@@ -1,4 +1,4 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import Card from "./Card";
 import { createCard } from "../models/Card";
 
@@ -9,7 +9,7 @@ describe("Card", () => {
     "image.png"
   );
 
-  const wrapper = shallowMount(Card, {
+  const wrapper = mount(Card, {
     propsData: {
       card
     },
@@ -29,23 +29,20 @@ describe("Card", () => {
 
   it("emits onAction when handler click is called", () => {
     wrapper.vm.click();
-    console.log(wrapper.html());
     expect(wrapper.emitted().onAction).toBeTruthy();
   });
 
   it("has title, description and image of the card placed", () => {
     // How it would look visually is less important,
     // but we need to check that information is presented
-    const titleIndex = wrapper
-      .find("md-card-header-stub")
-      .text()
-      .indexOf(card.title);
+    const titleIndex = wrapper.text().indexOf(card.title);
     expect(titleIndex).toBeGreaterThanOrEqual(0);
 
     const descriptionIndex = wrapper.text().indexOf(card.description);
     expect(descriptionIndex).toBeGreaterThanOrEqual(0);
 
     const img = wrapper.find("img").element;
+    expect(img).toBeTruthy();
     expect(img.getAttribute("src")).toBe(card.img);
     expect(img.getAttribute("title")).toBe(card.title);
   });

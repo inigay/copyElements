@@ -5,7 +5,7 @@ import { createCard } from "../models/Card";
 import { cloneDeep } from "lodash";
 
 //Mutations
-test("Mutations: AddCard and RemoveCard", () => {
+test("Mutations/AddCard and Mutations/RemoveCard", () => {
   const localVue = createLocalVue();
   localVue.use(Vuex);
   const store = new Vuex.Store(cloneDeep(cardStore));
@@ -21,7 +21,7 @@ test("Mutations: AddCard and RemoveCard", () => {
   expect(store.state.copies.length).toBe(0);
 });
 
-test("Mutations: AddCopy and RemoveCopy", () => {
+test("Mutations/AddCopy and Mutations/RemoveCopy", () => {
   const localVue = createLocalVue();
   const config = cloneDeep(cardStore);
 
@@ -48,7 +48,7 @@ test("Mutations: AddCopy and RemoveCopy", () => {
 });
 
 // Actions
-test("Actions: AddCard", () => {
+test("Actions/AddCard", () => {
   const localVue = createLocalVue();
   localVue.use(Vuex);
 
@@ -68,7 +68,7 @@ test("Actions: AddCard", () => {
   expect(mockFn.mock.calls.length).toBe(2);
 });
 
-test("Actions: RemoveCard", () => {
+test("Actions/RemoveCard", () => {
   const localVue = createLocalVue();
   localVue.use(Vuex);
 
@@ -90,7 +90,7 @@ test("Actions: RemoveCard", () => {
   expect(store.state.copies.length).toBe(0);
 });
 
-test("Actions: AddCopy", () => {
+test("Actions/AddCopy", () => {
   const localVue = createLocalVue();
   localVue.use(Vuex);
 
@@ -105,7 +105,7 @@ test("Actions: AddCopy", () => {
   expect(store.state.copies[index]).toBe(1);
 });
 
-test("Actions: RemoveCopy", () => {
+test("Actions/RemoveCopy", () => {
   const localVue = createLocalVue();
   localVue.use(Vuex);
 
