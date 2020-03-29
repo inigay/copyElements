@@ -33,7 +33,7 @@
 import Card from "./Card";
 
 export default {
-  name: "HelloWorld",
+  name: "Container",
   components: { Card },
   props: {
     msg: String
