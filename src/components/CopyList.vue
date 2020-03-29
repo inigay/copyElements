@@ -54,6 +54,7 @@ export default {
     left: 0;
     top: 0;
     z-index: -1;
+    transition: all 0.2s ease;
 
     .actions {
       visibility: hidden;

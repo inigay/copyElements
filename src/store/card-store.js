@@ -55,19 +55,37 @@ export default {
       if (state.cards.length === 0) {
         commit(
           "addCard",
-          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/bear.jfif")
+          createCard(
+            "Teddy Bear",
+            `A teddy bear is a stuffed toy in the form of a bear. 
+          Developed apparently simultaneously by toymakers Morris Michtom in the U.S.`,
+            "/bear.jfif"
+          )
         );
         commit(
           "addCard",
-          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/deer.jpg")
+          createCard(
+            "Deer John",
+            `Large handmade crochet deer stands about 17 inches tall.
+          Made with acrylic yarn, safety eyes and poly fil.`,
+            "/deer.jpg"
+          )
         );
         commit(
           "addCard",
-          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/bus.jpg")
+          createCard(
+            "Beep Beep Bus",
+            `Character- Beep Beep Bus is playful and sometimes mischievous, and enjoys passing gas. He also enjoys playing games with his best friend Rogi, the green bus.`,
+            "/bus.jpg"
+          )
         );
         commit(
           "addCard",
-          createCard("N95", "N95 Mask alskdjasd alskdjasldkd ", "/slammer.jfif")
+          createCard(
+            "N95",
+            `This beautiful wooden doll family set is perfect for populating play sets or playing family in any imaginative setting!`,
+            "/slammer.jfif"
+          )
         );
       }
     }
