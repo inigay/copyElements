@@ -1,12 +1,7 @@
 <template>
   <div class="left-side">
     <template v-for="(card, index) in cards">
-      <Card
-        :key="index"
-        :card="card"
-        @onAction="addCopy"
-        :action-name="'Add'"
-      />
+      <Card :key="index" :card="card" @onAction="addCopy" />
     </template>
   </div>
 </template>

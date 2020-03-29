@@ -1,13 +1,18 @@
 function bloatElement(el, up = true) {
+  const totalCountEl = el.querySelector(".total-copies");
   if (up) {
-    el.style.cssText = "transition: all 0.1s ease;transform: scale(1.03);";
+    totalCountEl.style.cssText =
+      "transition: all 0.1s ease;transform: scale(1.1);";
     setTimeout(() => {
-      el.style.cssText = "transition: all 0.1s ease;transform: scale(1);";
+      totalCountEl.style.cssText =
+        "transition: all 0.1s ease;transform: scale(1);";
     }, 100);
   } else {
-    el.style.cssText = "transition: all 0.1s ease;transform: scale(0.97);";
+    totalCountEl.style.cssText =
+      "transition: all 0.1s ease;transform: scale(0.9);";
     setTimeout(() => {
-      el.style.cssText = "transition: all 0.1s ease;transform: scale(1);";
+      totalCountEl.style.cssText =
+        "transition: all 0.1s ease;transform: scale(1);";
     }, 100);
   }
 }

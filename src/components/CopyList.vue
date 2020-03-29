@@ -5,7 +5,6 @@
         <Card
           :class="{ empty: copy < 1 }"
           :card="cardByIndex(index)"
-          :action-name="'Remove'"
           @onAction="removeCopy"
         >
           <template v-slot:default="{ card, click }">
