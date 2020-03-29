@@ -17,6 +17,12 @@
             </div>
           </template>
         </Card>
+        <Card
+          :class="{ empty: copy < 1, shallow: true }"
+          :card="cardByIndex(index)"
+        >
+          <md-button class="md-button" :disabled="true"> </md-button>
+        </Card>
       </div>
     </template>
   </div>
@@ -47,6 +53,15 @@ export default {
 <style scoped lang="scss">
 .right-side > * {
   margin-bottom: 2rem;
+  position: relative;
+
+  .shallow {
+    position: absolute;
+    left: -50%;
+    opacity: 0.5;
+    top: 0;
+    z-index: -1;
+  }
 }
 
 .total-copies {

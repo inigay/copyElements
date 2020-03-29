@@ -2,11 +2,11 @@
   <md-card class="app-card">
     <md-card>
       <md-card-media>
-        <img :src="card.img" :alt="card.title" />
+        <img :src="card.img" :title="card.title" :alt="card.title" />
       </md-card-media>
 
       <md-card-header>
-        <div class="md-title">Title goes here</div>
+        <div class="md-title">{{ card.title }}</div>
       </md-card-header>
 
       <md-card-content>
@@ -30,10 +30,6 @@ export default {
   props: {
     card: {
       type: Object,
-      required: true
-    },
-    actionName: {
-      type: String,
       required: true
     }
   },
